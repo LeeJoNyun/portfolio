@@ -1,0 +1,1087 @@
+$arrowImg: "https://www.monami.com/images/common/lang_arr.gif";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+#wrap,
+#header {
+  width: 100%;
+  min-width: 1500px;
+}
+
+.inner {
+  width: 1400px;
+  margin: auto;
+}
+
+#header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* ← 이게 중요! */
+  .top_header {
+    border-bottom: 1px solid #dcdcdc;
+    .inner {
+      // border: 1px solid #000;
+
+      .menu_box {
+        height: 59px;
+        display: flex;
+        justify-content: space-between;
+
+        .left_menu {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          .lang {
+            width: 88px;
+            height: 25.59px;
+            border: 0.2px solid #dcdcdc;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.5s ease;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 25.59px;
+              position: relative;
+              a {
+                position: relative;
+                font-size: 14px;
+              }
+
+              &:nth-child(1) a::before {
+                content: "";
+                width: 13px;
+                height: 11px;
+                position: absolute;
+                left: -16px;
+                top: 7px;
+                background-image: url(https://www.monami.com/images/common/lang_kor.gif);
+              }
+              &:nth-child(2) {
+                opacity: 0;
+                visibility: hidden;
+                max-height: 0;
+                transition: all 0.5s ease;
+                overflow: hidden;
+              }
+
+              .lang_arrow {
+                width: 7px;
+                height: 4px;
+                background-image: url($arrowImg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                right: 10px;
+                top: 11px;
+                cursor: pointer;
+              }
+            }
+            &.on {
+              height: 51px;
+              .lang_arrow {
+                transform: rotate(180deg);
+                transition: 0.5s ease;
+              }
+              li:nth-child(2) {
+                opacity: 1;
+                visibility: visible;
+                max-height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                  position: relative;
+                  &::before {
+                    content: "";
+                    width: 13px;
+                    height: 11px;
+                    position: absolute;
+                    left: -16px;
+                    top: 7px;
+                    background-image: url(https://www.monami.com/images/common/lang_eng.gif);
+                  }
+                }
+              }
+            }
+          }
+
+          .sns {
+            display: flex;
+            gap: 10px;
+          }
+        }
+
+        .right_menu {
+          display: flex;
+          align-items: center;
+          .top-menu {
+            display: flex;
+            gap: 10px;
+            font-size: 11px;
+
+            li {
+              a {
+                display: inline-block;
+                color: #9b9a9a;
+                position: relative;
+              }
+              &:nth-child(1) {
+                a {
+                  &::after {
+                    content: "";
+                    width: 1px;
+                    height: 12px;
+                    background-color: #9b9a9a;
+                    position: absolute;
+                    left: 41px;
+                    top: 2px;
+                  }
+                }
+              }
+              &:nth-child(2) {
+                a {
+                  &::after {
+                    content: "";
+                    width: 1px;
+                    height: 12px;
+                    background-color: #9b9a9a;
+                    position: absolute;
+                    left: 58px;
+                    top: 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom_header {
+    height: 89px;
+    border-bottom: 1px solid #dcdcdc;
+    .inner {
+      height: 89px;
+      display: flex;
+      .logo {
+        display: inline-block;
+        a {
+          display: inline-block;
+          width: 169px;
+          height: 89px;
+        }
+      }
+      .menu {
+        display: flex;
+        width: 1076px;
+        margin-left: 79px;
+        gap: 40px;
+
+        li {
+          &:hover {
+            border-bottom: 2px solid #c40f39;
+            a {
+              color: #c40f39;
+              font-weight: 400;
+            }
+          }
+          width: 136.89px;
+          text-align: center;
+          a {
+            height: 89px;
+            line-height: 89px;
+            font-size: 17px;
+            color: #303030;
+            transition: all 0.3s;
+          }
+          .depth2 {
+            display: none;
+            li {
+              width: 136.89px;
+              height: 49px;
+              border-bottom: 1px solid #e1e1e1;
+              a {
+                display: inline-block;
+                width: 136.89px;
+                height: 49px;
+                line-height: 49px;
+                font-size: 14px;
+                color: #676767;
+                position: relative;
+              }
+              &:last-child {
+                border-bottom: none;
+              }
+
+              &:hover {
+                a {
+                  color: #c40f39;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .icon_box {
+        margin-left: 40px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        a {
+          width: 19px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
+
+#header.on {
+  .bottom_header {
+    .inner {
+      .menu {
+        &::after {
+          content: "";
+          background-color: #fff;
+          width: 100%;
+          height: 400px;
+          opacity: 0.8;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          z-index: -1;
+        }
+        li {
+          .depth2 {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 652px;
+  margin-top: 150px;
+  background-image: url(https://www.monami.com/images/main/visual1.jpg);
+  background-size: cover;
+  article {
+    width: 1160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding-left: 120px;
+
+    h3 {
+      font-size: 50px;
+      color: #fff;
+      line-height: 120%;
+      font-weight: 200;
+      // margin: 0 0 0 120px;
+      margin-bottom: 30px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 120px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: -20px;
+      }
+    }
+    p {
+      // margin: 0 0 0 120px;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+}
+
+#section1 {
+  padding-top: 75px;
+  padding-bottom: 90px;
+  height: 900px;
+  .inner {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    img {
+      border-radius: 20px;
+    }
+    .box1 {
+      width: 392px;
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        position: relative;
+        height: 90px;
+        letter-spacing: 2px;
+        color: #000;
+        line-height: 120%;
+
+        &::after {
+          content: "";
+          background-color: #c40f39;
+          width: 26px;
+          height: 5px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+      span {
+        display: inline-block;
+        font-size: 13px;
+        color: #6e6e6e;
+        margin: 20px 0;
+      }
+      .ondiv {
+        width: 362px;
+        height: 175px;
+      }
+    }
+
+    .box2 {
+      .ondiv {
+        width: 756px;
+        height: 330px;
+      }
+    }
+
+    .box3 {
+      .ondiv {
+        width: 362px;
+        height: 262px;
+      }
+    }
+
+    .box4 {
+      .ondiv {
+        width: 420px;
+        height: 409px;
+      }
+    }
+
+    .box5 {
+      .ondiv {
+        width: 284px;
+        height: 262px;
+      }
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      .ondiv {
+        display: table;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        background: #c40f39;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.6s;
+        border-radius: 24px;
+        .align {
+          display: table-cell;
+          vertical-align: middle;
+          .cate {
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #eec7d0;
+          }
+          .name {
+            font-size: 21px;
+            color: #fff;
+          }
+          .plus {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            margin: 45px auto 0;
+
+            transition: all 0.4s 0.2s;
+            div:nth-child(1) {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 100%;
+              height: 1px;
+              background: rgba(255, 255, 255, 0.6);
+            }
+            div:nth-child(2) {
+              position: absolute;
+              left: 50%;
+              top: 0;
+              width: 1px;
+              height: 100%;
+              background: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .ondiv {
+          opacity: 1;
+          .plus {
+            transform: rotateZ(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+#section2 {
+  background: #eee;
+  padding-top: 75px;
+  .title {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #000;
+    line-height: 120%;
+    &::after {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 4px;
+      margin: 10px auto;
+      background: #c40f39;
+    }
+  }
+  .desc {
+    text-align: center;
+    span {
+      display: inline-block;
+      font-size: 13px;
+      color: #6e6e6e;
+    }
+  }
+
+  .filter_tap {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    li {
+      width: 157px;
+      height: 36px;
+      border: 2px solid #898989;
+      border-radius: 25px;
+      text-align: center;
+      a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 36px;
+        color: #898989;
+        font-weight: 500;
+      }
+
+      &:hover {
+        border-color: #c40f39;
+        a {
+          color: #c40f39;
+        }
+      }
+
+      &.on {
+        border-color: #c40f39;
+        a {
+          color: #c40f39;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    // width: 266px;
+    // height: 505px;
+    width: 100%;
+    height: 100%;
+    margin-top: 70px;
+  }
+
+  .swiper-slide {
+    border-radius: 20px;
+    width: 266px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+    }
+    a {
+      width: 100%;
+      height: 505px;
+      img {
+        border-radius: 25px;
+      }
+      .info {
+        padding: 30px 30px;
+        .cate {
+          font-size: 12px;
+          color: #b3b3b3;
+        }
+        .name {
+          font-size: 15px;
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .slide_info {
+    margin-top: 70px;
+    height: 100px;
+    border-top: 1px dotted #ccc;
+    position: relative;
+
+    .left {
+      position: absolute;
+      top: -6px;
+      left: 30%;
+    }
+    .right {
+      position: absolute;
+      top: -6px;
+      right: 30%;
+    }
+    .hand {
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 27px;
+      display: block;
+      text-align: center;
+      background-color: #eeeeee;
+    }
+    strong {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+    }
+  }
+}
+#section3 {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  .video {
+    width: 100% !important;
+    height: 100%;
+    .bg_video {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+#section4 {
+  .inner {
+    display: flex;
+    .left_box {
+      width: 650px;
+      height: 362px;
+      padding: 50px 40px 0 0;
+      .box_top {
+        display: flex;
+        justify-content: space-between;
+        h2 {
+          display: inline-block;
+          font-size: 24px;
+          font-weight: 600;
+          position: relative;
+          color: #000;
+          &::after {
+            content: "";
+            width: 26px;
+            height: 4px;
+            background-color: #c40f39;
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+          }
+        }
+        a {
+          display: block;
+          vertical-align: middle;
+          height: 31px;
+          font-size: 11px;
+          line-height: 31px;
+          position: relative;
+          &::after {
+            content: "";
+            height: 1px;
+            background: #000;
+            width: 35px;
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #8f8b8b;
+
+        img {
+          width: 165px;
+          height: 120px;
+        }
+        .title {
+          height: 120px;
+          li {
+            width: 441px;
+            position: relative;
+            a {
+              height: auto;
+              strong {
+                display: inline-block;
+                width: 300px;
+                font-size: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-weight: 500;
+              }
+              p {
+                width: 350px;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                display: -webkit-box;
+                -webkit-line-clamp: 2; // 원하는 라인수
+                -webkit-box-orient: vertical;
+              }
+              span {
+                font-size: 12px;
+                color: #8f8b8b;
+                font-weight: 500;
+                position: absolute;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .content_list {
+        width: 650px;
+        ul {
+          li {
+            display: block;
+            position: relative;
+            width: 100%;
+
+            a {
+              display: inline-block;
+              width: 400px;
+              font-size: 12px;
+              color: #8f8b8b;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+            }
+            span {
+              width: 68px;
+              font-size: 12px;
+              color: #8f8b8b;
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .right_box {
+      display: flex;
+      .inquiry {
+        width: 350px;
+        height: 355px;
+
+        background-image: url(https://www.monami.com/images/main/inquiry_bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        display: flex; // Flex 사용
+        flex-direction: column; // 세로로 정렬
+        align-items: center; // 수평 가운데 정렬
+        justify-content: center; // 수직 가운데 정렬
+        text-align: center; // 텍스트 수평 정렬
+        position: relative;
+        .tit {
+          position: absolute;
+          display: block;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 100px;
+          width: 100px;
+          height: 40px;
+          h2 {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 20px;
+            position: relative;
+            &::before {
+              content: "";
+              width: 50px;
+              height: 50px;
+              background-image: url(https://www.monami.com/images/main/inquiry_tit_bg.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -60px;
+            }
+            &::after {
+              content: "";
+              width: 26px;
+              height: 4px;
+              background-color: #c40f39;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 8px;
+            }
+          }
+        }
+
+        p {
+          font-size: 12px;
+          color: #6a6a6a;
+          position: absolute;
+          top: 53%;
+        }
+        a {
+          display: inline-block;
+          color: #c40f39;
+          width: 171px;
+          height: 39px;
+          border: 2px solid #c40f39;
+          border-radius: 25px;
+          line-height: 39px;
+          position: absolute;
+          bottom: 10%;
+          font-size: 14px;
+          font-weight: 500;
+          transition: 0.5s;
+          &:hover {
+            background-color: #c40f39;
+            color: white;
+          }
+        }
+      }
+      .shop {
+        width: 350px;
+        height: 355px;
+
+        background-image: url(https://www.monami.com/images/main/shop_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        display: flex; // Flex 사용
+        flex-direction: column; // 세로로 정렬
+        align-items: center; // 수평 가운데 정렬
+        justify-content: center; // 수직 가운데 정렬
+        text-align: center; // 텍스트 수평 정렬
+        position: relative;
+        .tit {
+          position: absolute;
+          display: block;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 100px;
+          width: 300px;
+          height: 40px;
+          h2 {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 20px;
+            position: relative;
+            &::before {
+              content: "";
+              width: 60px;
+              height: 50px;
+              background-image: url(https://www.monami.com/images/main/shop_tit_bg.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -60px;
+            }
+            &::after {
+              content: "";
+              width: 26px;
+              height: 4px;
+              background-color: #c40f39;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 8px;
+            }
+          }
+        }
+
+        p {
+          font-size: 12px;
+          color: #6a6a6a;
+          position: absolute;
+          top: 53%;
+        }
+        a {
+          display: inline-block;
+          color: #c40f39;
+          width: 171px;
+          height: 39px;
+          border: 2px solid #c40f39;
+          border-radius: 25px;
+          line-height: 39px;
+          position: absolute;
+          bottom: 10%;
+          font-size: 14px;
+          font-weight: 500;
+          transition: 0.5s;
+          &:hover {
+            background-color: #c40f39;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  background-color: #000;
+  padding: 60px;
+  .inner {
+    border: 1px solid #000;
+    .footer_top {
+      width: 100%;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        li {
+          a {
+            display: inline-block;
+            font-size: 13.5px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.5);
+            &::after {
+              content: "";
+              width: 2px;
+              height: 18px;
+              background: rgba(255, 255, 255, 0.1);
+              position: absolute;
+              right: -13px;
+              top: 0;
+            }
+          }
+          &:nth-child(2) {
+            a {
+              color: #fff;
+            }
+          }
+          &:nth-child(3) {
+            a {
+              &::after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer_bottom {
+      margin-top: 20px;
+      display: flex;
+      position: relative;
+      .info {
+        width: 556px;
+        strong {
+          display: block;
+          font-family: "Montserrat", sans-serif;
+          font-size: 15px;
+          color: #fff;
+          margin-bottom: 10px;
+        }
+        address {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+        span {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .help {
+        width: 160px;
+        text-align: center;
+        .tit {
+          display: block;
+          width: 100%;
+          color: white;
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+        .phone {
+          display: inline-block;
+          width: 100%;
+          font-family: "Montserrat", sans-serif;
+          font-size: 24px;
+          color: rgba(255, 255, 255, 0.5);
+          white-space: nowrap;
+          margin-bottom: 20px;
+        }
+        button {
+          width: 150px;
+          height: 34px;
+          font-size: 14px;
+          border-radius: 8px;
+          color: #dfdfdf;
+          text-align: center;
+          border: 1px solid #878787;
+          background: #4a4a4a;
+          position: relative;
+          &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-image: url(https://www.monami.com/images/common/family_arr.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 14px;
+            bottom: 10px;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+
+      .select_box {
+        display: block;
+        width: 242px;
+        border: 1px solid#878787;
+        height: 34px;
+        font-size: 13px;
+        line-height: 34px;
+        position: absolute;
+        right: 0;
+        border-radius: 6px;
+        background: #111010;
+        .tit {
+          padding: 0 20px;
+          display: inline-block;
+          width: 242px;
+          height: 34px;
+          color: #878787;
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-image: url(https://www.monami.com/images/common/family_arr.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            transform-origin: center;
+            transition: 0.5s;
+          }
+          &.on {
+            &::after {
+              transform: rotate(0deg);
+            }
+          }
+        }
+        ul {
+          display: none;
+          width: 100%;
+          height: 0;
+          position: relative;
+          top: -39px;
+          left: -1px;
+          background: #000;
+          transition: height 0.5s;
+          li {
+            padding: 0 20px;
+            a {
+              color: #989898;
+            }
+          }
+        }
+
+        &.on {
+          border-radius: unset;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+          border-top: none;
+
+          ul {
+            display: block;
+            border: 1px solid#878787;
+            border-bottom: none;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+            top: -307px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

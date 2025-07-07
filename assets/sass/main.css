@@ -1,0 +1,719 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+#wrap,
+#header {
+  width: 100%;
+  min-width: 1500px;
+}
+
+.inner {
+  width: 1400px;
+  margin: auto;
+}
+
+#header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* ← 이게 중요! */
+}
+#header .top_header {
+  border-bottom: 1px solid #dcdcdc;
+}
+#header .top_header .inner .menu_box {
+  height: 59px;
+  display: flex;
+  justify-content: space-between;
+}
+#header .top_header .inner .menu_box .left_menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#header .top_header .inner .menu_box .left_menu .lang {
+  width: 88px;
+  height: 25.59px;
+  border: 0.2px solid #dcdcdc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+#header .top_header .inner .menu_box .left_menu .lang li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25.59px;
+  position: relative;
+}
+#header .top_header .inner .menu_box .left_menu .lang li a {
+  position: relative;
+  font-size: 14px;
+}
+#header .top_header .inner .menu_box .left_menu .lang li:nth-child(1) a::before {
+  content: "";
+  width: 13px;
+  height: 11px;
+  position: absolute;
+  left: -16px;
+  top: 7px;
+  background-image: url(https://www.monami.com/images/common/lang_kor.gif);
+}
+#header .top_header .inner .menu_box .left_menu .lang li:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+#header .top_header .inner .menu_box .left_menu .lang li .lang_arrow {
+  width: 7px;
+  height: 4px;
+  background-image: url("https://www.monami.com/images/common/lang_arr.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  cursor: pointer;
+}
+#header .top_header .inner .menu_box .left_menu .lang.on {
+  height: 51px;
+}
+#header .top_header .inner .menu_box .left_menu .lang.on .lang_arrow {
+  transform: rotate(180deg);
+  transition: 0.5s ease;
+}
+#header .top_header .inner .menu_box .left_menu .lang.on li:nth-child(2) {
+  opacity: 1;
+  visibility: visible;
+  max-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .top_header .inner .menu_box .left_menu .lang.on li:nth-child(2) a {
+  position: relative;
+}
+#header .top_header .inner .menu_box .left_menu .lang.on li:nth-child(2) a::before {
+  content: "";
+  width: 13px;
+  height: 11px;
+  position: absolute;
+  left: -16px;
+  top: 7px;
+  background-image: url(https://www.monami.com/images/common/lang_eng.gif);
+}
+#header .top_header .inner .menu_box .left_menu .sns {
+  display: flex;
+  gap: 10px;
+}
+#header .top_header .inner .menu_box .right_menu {
+  display: flex;
+  align-items: center;
+}
+#header .top_header .inner .menu_box .right_menu .top-menu {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+}
+#header .top_header .inner .menu_box .right_menu .top-menu li a {
+  display: inline-block;
+  color: #9b9a9a;
+  position: relative;
+}
+#header .top_header .inner .menu_box .right_menu .top-menu li:nth-child(1) a::after {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #9b9a9a;
+  position: absolute;
+  left: 41px;
+  top: 2px;
+}
+#header .top_header .inner .menu_box .right_menu .top-menu li:nth-child(2) a::after {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #9b9a9a;
+  position: absolute;
+  left: 58px;
+  top: 2px;
+}
+#header .bottom_header {
+  height: 89px;
+  border-bottom: 1px solid #dcdcdc;
+}
+#header .bottom_header .inner {
+  height: 89px;
+  display: flex;
+}
+#header .bottom_header .inner .logo {
+  display: inline-block;
+}
+#header .bottom_header .inner .logo a {
+  display: inline-block;
+  width: 169px;
+  height: 89px;
+}
+#header .bottom_header .inner .menu {
+  display: flex;
+  width: 1076px;
+  margin-left: 79px;
+  gap: 40px;
+}
+#header .bottom_header .inner .menu li {
+  width: 136.89px;
+  text-align: center;
+}
+#header .bottom_header .inner .menu li:hover {
+  border-bottom: 2px solid #c40f39;
+}
+#header .bottom_header .inner .menu li:hover a {
+  color: #c40f39;
+  font-weight: 400;
+}
+#header .bottom_header .inner .menu li a {
+  height: 89px;
+  line-height: 89px;
+  font-size: 17px;
+  color: #303030;
+  transition: all 0.3s;
+}
+#header .bottom_header .inner .menu li .depth2 {
+  display: none;
+}
+#header .bottom_header .inner .menu li .depth2 li {
+  width: 136.89px;
+  height: 49px;
+  border-bottom: 1px solid #e1e1e1;
+}
+#header .bottom_header .inner .menu li .depth2 li a {
+  display: inline-block;
+  width: 136.89px;
+  height: 49px;
+  line-height: 49px;
+  font-size: 14px;
+  color: #676767;
+  position: relative;
+}
+#header .bottom_header .inner .menu li .depth2 li:last-child {
+  border-bottom: none;
+}
+#header .bottom_header .inner .menu li .depth2 li:hover a {
+  color: #c40f39;
+}
+#header .bottom_header .inner .icon_box {
+  margin-left: 40px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+#header .bottom_header .inner .icon_box a {
+  width: 19px;
+  height: 18px;
+}
+
+#header.on .bottom_header .inner .menu::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 400px;
+  opacity: 0.8;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+}
+#header.on .bottom_header .inner .menu li .depth2 {
+  display: block;
+}
+
+.banner {
+  width: 100%;
+  height: 652px;
+  margin-top: 150px;
+  background-image: url(https://www.monami.com/images/main/visual1.jpg);
+  background-size: cover;
+}
+.banner article {
+  width: 1160px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding-left: 120px;
+}
+.banner article h3 {
+  font-size: 50px;
+  color: #fff;
+  line-height: 120%;
+  font-weight: 200;
+  margin-bottom: 30px;
+  position: relative;
+}
+.banner article h3::before {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: -20px;
+}
+.banner article p {
+  color: #fff;
+  font-weight: 400;
+}
+
+#section1 {
+  padding-top: 75px;
+  padding-bottom: 90px;
+  height: 900px;
+}
+#section1 .inner {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+#section1 .inner img {
+  border-radius: 20px;
+}
+#section1 .inner .box1 {
+  width: 392px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+#section1 .inner .box1 h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  height: 90px;
+  letter-spacing: 2px;
+  color: #000;
+  line-height: 120%;
+}
+#section1 .inner .box1 h2::after {
+  content: "";
+  background-color: #c40f39;
+  width: 26px;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#section1 .inner .box1 span {
+  display: inline-block;
+  font-size: 13px;
+  color: #6e6e6e;
+  margin: 20px 0;
+}
+#section1 .inner .box1 .ondiv {
+  width: 362px;
+  height: 175px;
+}
+#section1 .inner .box2 .ondiv {
+  width: 756px;
+  height: 330px;
+}
+#section1 .inner .box3 .ondiv {
+  width: 362px;
+  height: 262px;
+}
+#section1 .inner .box4 .ondiv {
+  width: 420px;
+  height: 409px;
+}
+#section1 .inner .box5 .ondiv {
+  width: 284px;
+  height: 262px;
+}
+#section1 .inner a {
+  position: relative;
+  display: inline-block;
+}
+#section1 .inner a .ondiv {
+  display: table;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: #c40f39;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.6s;
+  border-radius: 24px;
+}
+#section1 .inner a .ondiv .align {
+  display: table-cell;
+  vertical-align: middle;
+}
+#section1 .inner a .ondiv .align .cate {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #eec7d0;
+}
+#section1 .inner a .ondiv .align .name {
+  font-size: 21px;
+  color: #fff;
+}
+#section1 .inner a .ondiv .align .plus {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 45px auto 0;
+  transition: all 0.4s 0.2s;
+}
+#section1 .inner a .ondiv .align .plus div:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+}
+#section1 .inner a .ondiv .align .plus div:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+#section1 .inner a:hover .ondiv {
+  opacity: 1;
+}
+#section1 .inner a:hover .ondiv .plus {
+  transform: rotateZ(180deg);
+}
+
+#section2 {
+  background: #eee;
+  padding-top: 75px;
+}
+#section2 .title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #000;
+  line-height: 120%;
+}
+#section2 .title::after {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 4px;
+  margin: 10px auto;
+  background: #c40f39;
+}
+#section2 .desc {
+  text-align: center;
+}
+#section2 .desc span {
+  display: inline-block;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+#section2 .filter_tap {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+#section2 .filter_tap li {
+  width: 157px;
+  height: 36px;
+  border: 2px solid #898989;
+  border-radius: 25px;
+  text-align: center;
+}
+#section2 .filter_tap li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  line-height: 36px;
+  color: #898989;
+  font-weight: 500;
+}
+#section2 .filter_tap li:hover {
+  border-color: #c40f39;
+}
+#section2 .filter_tap li:hover a {
+  color: #c40f39;
+}
+#section2 .filter_tap li.on {
+  border-color: #c40f39;
+}
+#section2 .filter_tap li.on a {
+  color: #c40f39;
+}
+#section2 .swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+}
+#section2 .swiper-slide {
+  border-radius: 20px;
+  width: 266px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section2 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 390px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#section2 .swiper-slide a {
+  width: 100%;
+  height: 505px;
+}
+#section2 .swiper-slide a img {
+  border-radius: 25px;
+}
+#section2 .swiper-slide a .info {
+  padding: 30px 30px;
+}
+#section2 .swiper-slide a .info .cate {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+#section2 .swiper-slide a .info .name {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+}
+#section2 .slide_info {
+  margin-top: 70px;
+  height: 100px;
+  border-top: 1px dotted #ccc;
+  position: relative;
+}
+#section2 .slide_info .left {
+  position: absolute;
+  top: -6px;
+  left: 30%;
+}
+#section2 .slide_info .right {
+  position: absolute;
+  top: -6px;
+  right: 30%;
+}
+#section2 .slide_info .hand {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 27px;
+  display: block;
+  text-align: center;
+  background-color: #eeeeee;
+}
+#section2 .slide_info strong {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+}
+
+#section3 {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+#section3 .video {
+  width: 100% !important;
+  height: 100%;
+}
+#section3 .video .bg_video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#section4 .inner {
+  display: flex;
+}
+#section4 .inner .left_box {
+  width: 650px;
+  height: 362px;
+  padding: 50px 40px 0 0;
+}
+#section4 .inner .left_box .box_top {
+  display: flex;
+  justify-content: space-between;
+}
+#section4 .inner .left_box .box_top h2 {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  color: #000;
+}
+#section4 .inner .left_box .box_top h2::after {
+  content: "";
+  width: 26px;
+  height: 4px;
+  background-color: #c40f39;
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+}
+#section4 .inner .left_box .box_top a {
+  display: block;
+  vertical-align: middle;
+  height: 31px;
+  font-size: 11px;
+  line-height: 31px;
+  position: relative;
+}
+#section4 .inner .left_box .box_top a::after {
+  content: "";
+  height: 1px;
+  background: #000;
+  width: 35px;
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+}
+#section4 .inner .left_box .content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #8f8b8b;
+}
+#section4 .inner .left_box .content img {
+  width: 165px;
+  height: 120px;
+}
+#section4 .inner .left_box .content .title {
+  height: 120px;
+}
+#section4 .inner .left_box .content .title li {
+  width: 441px;
+  position: relative;
+}
+#section4 .inner .left_box .content .title li a {
+  height: auto;
+}
+#section4 .inner .left_box .content .title li a strong {
+  display: inline-block;
+  width: 300px;
+  font-size: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+#section4 .inner .left_box .content .title li a p {
+  width: 350px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+#section4 .inner .left_box .content .title li a span {
+  font-size: 12px;
+  color: #8f8b8b;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+}
+#section4 .inner .left_box .content_list {
+  width: 650px;
+}
+#section4 .inner .left_box .content_list ul li {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+#section4 .inner .left_box .content_list ul li a {
+  display: inline-block;
+  width: 400px;
+  font-size: 12px;
+  color: #8f8b8b;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#section4 .inner .left_box .content_list ul li span {
+  width: 68px;
+  font-size: 12px;
+  color: #8f8b8b;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#section4 .inner .right_box .inquiry {
+  width: 350px;
+  height: 355px;
+  background-image: url(https://www.monami.com/images/main/inquiry_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#section4 .inner .right_box .inquiry h2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  position: relative;
+}
+#section4 .inner .right_box .inquiry h2::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(https://www.monami.com/images/main/inquiry_tit_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -60px;
+}
+#section4 .inner .right_box .inquiry h2::after {
+  content: "";
+  width: 26px;
+  height: 4px;
+  background-color: #c40f39;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+}
+#section4 .inner .right_box .inquiry p {
+  font-size: 14px;
+  color: #6a6a6a;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+#section4 .inner .right_box .inquiry a {
+  color: #c40f39;
+  width: 171px;
+  height: 39px;
+  border: 3px solid #c40f39;
+  border-radius: 25px;
+  line-height: 39px;
+}
+/*# sourceMappingURL=main.css.map */
